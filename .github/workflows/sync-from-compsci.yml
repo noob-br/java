@@ -1,0 +1,45 @@
+name: Sync Java POO2 from CompSci-UFSC
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: sync-java-poo2
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the Java mirror
+        uses: actions/checkout@v4
+
+      - name: Fetch only the Java POO2 source folder
+        shell: bash
+        run: |
+          source_repo="$RUNNER_TEMP/CompSci-UFSC"
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/noob-br/CompSci-UFSC.git "$source_repo"
+          git -C "$source_repo" sparse-checkout set --no-cone "SecondSemester/Java - POO2"
+          test -d "$source_repo/SecondSemester/Java - POO2"
+          rsync -a --delete \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            "$source_repo/SecondSemester/Java - POO2/" ./
+
+      - name: Commit synchronized content
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Mirror already up to date."
+            exit 0
+          fi
+          git commit -m "Sync Java POO2 from CompSci-UFSC"
+          git push origin main
