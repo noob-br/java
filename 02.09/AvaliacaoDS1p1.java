@@ -109,8 +109,69 @@ class AvaliacaoDS1p1 {
      *                                  tabuleiro.
      */
     public static List<IntegerPair> movimentosPossiveisCavalo(int x, int y) {
-        /* COMPLETE */
-        return null;
+        if (x < 0 || x > 7 || y < 0 || y > 7) {
+            throw new IllegalArgumentException("Posicao invalida");
+        }
+
+        List<IntegerPair> movimentos = new ArrayList<>();
+
+        int novoX = x + 2;
+        int novoY = y + 1;
+
+        if (novoX <= 7 && novoY <= 7) {
+            movimentos.add(new IntegerPair(novoX, novoY));
+        }
+
+        novoX = x + 1;
+        novoY = y + 2;
+
+        if (novoX <= 7 && novoY <= 7) {
+            movimentos.add(new IntegerPair(novoX, novoY));
+        }
+
+        novoX = x - 1;
+        novoY = y + 2;
+
+        if (novoX >= 0 && novoY <= 7) {
+            movimentos.add(new IntegerPair(novoX, novoY));
+        }
+
+        novoX = x - 2;
+        novoY = y + 1;
+
+        if (novoX >= 0 && novoY <= 7) {
+            movimentos.add(new IntegerPair(novoX, novoY));
+        }
+
+        novoX = x - 2;
+        novoY = y - 1;
+
+        if (novoX >= 0 && novoY >= 0) {
+            movimentos.add(new IntegerPair(novoX, novoY));
+        }
+
+        novoX = x - 1;
+        novoY = y - 2;
+
+        if (novoX >= 0 && novoY >= 0) {
+            movimentos.add(new IntegerPair(novoX, novoY));
+        }
+
+        novoX = x + 1;
+        novoY = y - 2;
+
+        if (novoX <= 7 && novoY >= 0) {
+            movimentos.add(new IntegerPair(novoX, novoY));
+        }
+
+        novoX = x + 2;
+        novoY = y - 1;
+
+        if (novoX <= 7 && novoY >= 0) {
+            movimentos.add(new IntegerPair(novoX, novoY));
+        }
+
+        return movimentos;
     }
 
     /**
@@ -154,8 +215,50 @@ class AvaliacaoDS1p1 {
      *                                  tabuleiro.
      */
     public static List<IntegerPair> movimentosPossiveisRainha(int x, int y) {
-        /* COMPLETE */
-        return null;
+
+        if (x < 0 || x > 7 || y < 0 || y > 7) {
+            throw new IllegalArgumentException();
+        }
+
+        List<IntegerPair> movimentos = new ArrayList<>();
+
+        for (int z = x + 1; z <= 7; z++) {
+            movimentos.add(new IntegerPair(z, y));
+        }
+
+        for (int a = x - 1; a >= 0; a--) {
+            movimentos.add(new IntegerPair(a, y));
+        }
+
+        for (int b = y + 1; b <= 7; b++) {
+            movimentos.add(new IntegerPair(x, b));
+        }
+
+        for (int c = y - 1; c >= 0; c--) {
+            movimentos.add(new IntegerPair(x, c));
+        }
+
+        // diagonal superior direita
+        for (int z = 1; x + z <= 7 && y + z <= 7; z++) {
+            movimentos.add(new IntegerPair(x + z, y + z));
+        }
+
+        // diagonal inferior direita
+        for (int z = 1; x + z <= 7 && y - z >= 0; z++) {
+            movimentos.add(new IntegerPair(x + z, y - z));
+        }
+
+        // diagonal superior esquerda
+        for (int z = 1; x - z >= 0 && y + z <= 7; z++) {
+            movimentos.add(new IntegerPair(x - z, y + z));
+        }
+
+        // diagonal inferior esquerda
+        for (int z = 1; x - z >= 0 && y - z >= 0; z++) {
+            movimentos.add(new IntegerPair(x - z, y - z));
+        }
+
+        return movimentos;
     }
 
     /**
