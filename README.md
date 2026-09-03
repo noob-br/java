@@ -24,6 +24,7 @@ Avaliação prática algorítmica e orientada a objetos (Prof. Cancian). Contém
 | **Questão 1** | [questao1](02.09/questao1/README.md) | Contagem de triângulos retângulos inteiros (Triplos de Pitágoras) | Concluído ✅ |
 | **Questão 2** | [questao2](02.09/questao2/README.md) | Lista de movimentos válidos em L do Cavalo no tabuleiro de xadrez 8x8 | Concluído ✅ |
 | **Questão 3** | [questao3](02.09/questao3/README.md) | Lista ordenada de movimentos da Rainha (8 direções) no xadrez 8x8 | Concluído ✅ |
+| **Questão 4** | [questao4](02.09/questao4/README.md) | Estimativa da constante matemática $e$ por meio de série finita | Concluído ✅ |
 
 ---
 
@@ -36,7 +37,8 @@ POO2/
 │   ├── IntegerPair.java    # Classe auxiliar para coordenadas (x, y)
 │   ├── questao1/           # Triângulos Pitagóricos (código + testes + README)
 │   ├── questao2/           # Movimentos do Cavalo no Xadrez (código + testes + README)
-│   └── questao3/           # Movimentos da Rainha no Xadrez (código + testes + README)
+│   ├── questao3/           # Movimentos da Rainha no Xadrez (código + testes + README)
+│   └── questao4/           # Estimativa da Constante e (código + testes + README)
 ├── exercises/              # Exercícios conceituais e práticos do livro
 │   ├── 3.12/               # Classe Invoice (Fatura)
 │   └── 7.14/               # Varargs (Produto de números inteiros)

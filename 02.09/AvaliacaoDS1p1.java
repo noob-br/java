@@ -259,6 +259,7 @@ class AvaliacaoDS1p1 {
         }
 
         return movimentos;
+
     }
 
     /**
@@ -294,7 +295,17 @@ class AvaliacaoDS1p1 {
      * @throws IllegalArgumentException se {@code numeroDeTermos < 0}.
      */
     public static double estimarConstanteE(int numeroDeTermos) {
-        return 0;
+        if (numeroDeTermos < 0) {
+            throw new IllegalArgumentException("Não foi dessa vez cowboy. ");
+        }
+        double fatorial = 1.0;
+        double e = 1.0;
+        for (int i = 1; i <= numeroDeTermos; i++) {
+            fatorial = i * fatorial;
+            e += (1.0 / fatorial);
+        }
+        return e;
+        // * e ≈ 1 + 1/1! + 1/2! + 1/3! + ... + 1/n!
         /* COMPLETE */
     }
 
