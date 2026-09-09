@@ -15,9 +15,9 @@ Repositório de resoluções e exercícios práticos da disciplina de **Programa
 
 ---
 
-### 📝 Preparação e Avaliação Prática DS1.1 (`02.09`)
+### 📝 Preparação e Avaliação Prática DS1.1 ([02.09](02.09/README.md))
 
-Avaliação prática algorítmica e orientada a objetos (Prof. Cancian). Contém a implementação unificada em [`AvaliacaoDS1p1.java`](02.09/AvaliacaoDS1p1.java) e versões modularizadas por questão:
+Avaliação prática algorítmica e orientada a objetos (Prof. Cancian). Contém a implementação unificada em [`AvaliacaoDS1p1.java`](02.09/AvaliacaoDS1p1.java), o [registro de estudos e performance](02.09/README.md) e versões modularizadas por questão:
 
 | Questão | Diretório | Descrição | Status |
 | :---: | :---: | :--- | :---: |

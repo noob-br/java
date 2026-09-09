@@ -1,3 +1,6 @@
 *.class
 .DS_Store
 20.08.zip
+**/testes/
+testes/
+
